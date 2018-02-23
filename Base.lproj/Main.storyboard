@@ -33,40 +33,43 @@
             </objects>
             <point key="canvasLocation" x="79" y="213"/>
         </scene>
-        <!--View Controller-->
+        <!--Book View Controller-->
         <scene sceneID="SgY-dc-ONQ">
             <objects>
-                <viewController id="gDo-EQ-lzQ" sceneMemberID="viewController">
+                <viewController id="gDo-EQ-lzQ" customClass="BookViewController" customModule="BookInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ah0-pX-gAP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rng-Na-cM1">
-                                <rect key="frame" x="48" y="84" width="280" height="150"/>
+                            <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rng-Na-cM1">
+                                <rect key="frame" x="48" y="94" width="280" height="200"/>
                                 <subviews>
-                                    <imageView verifyAmbiguity="off" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="150" translatesAutoresizingMaskIntoConstraints="NO" id="vno-lW-blg">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="150"/>
+                                    <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="150" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" image="ME3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vno-lW-blg">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="8BR-bN-MHB"/>
-                                            <constraint firstAttribute="height" constant="150" id="xff-uD-6Zs"/>
+                                            <constraint firstAttribute="height" constant="200" id="xff-uD-6Zs"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="DU7-Ci-XZ8"/>
-                                    <constraint firstAttribute="height" constant="150" id="zKl-lK-Kle"/>
+                                    <constraint firstAttribute="height" constant="200" placeholder="YES" id="zKl-lK-Kle"/>
                                 </constraints>
                             </stackView>
-                            <textField verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hto-L4-AZs">
-                                <rect key="frame" x="47" y="270" width="280" height="30"/>
+                            <textField verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hto-L4-AZs">
+                                <rect key="frame" x="47" y="314" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3d-AV-HiK">
-                                <rect key="frame" x="172" y="352" width="30" height="30"/>
+                            <button verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3d-AV-HiK">
+                                <rect key="frame" x="172" y="364" width="30" height="30"/>
                                 <viewLayoutGuide key="safeArea" id="fU9-mv-OOf"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="gDo-EQ-lzQ" eventType="touchUpInside" id="6fX-tt-Sd5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,6 +78,7 @@
                             <constraint firstItem="hto-L4-AZs" firstAttribute="centerX" secondItem="0Yy-6o-Qay" secondAttribute="centerX" id="XCC-YT-q0b"/>
                             <constraint firstItem="V3d-AV-HiK" firstAttribute="top" secondItem="hto-L4-AZs" secondAttribute="bottom" constant="20" id="dT3-FJ-042"/>
                             <constraint firstItem="hto-L4-AZs" firstAttribute="width" secondItem="vno-lW-blg" secondAttribute="width" id="egj-nW-714"/>
+                            <constraint firstItem="vno-lW-blg" firstAttribute="top" secondItem="0Yy-6o-Qay" secondAttribute="top" constant="30" id="ljN-zV-03E"/>
                             <constraint firstItem="V3d-AV-HiK" firstAttribute="centerX" secondItem="0Yy-6o-Qay" secondAttribute="centerX" id="p8T-k3-bpd"/>
                             <constraint firstItem="rng-Na-cM1" firstAttribute="centerX" secondItem="0Yy-6o-Qay" secondAttribute="centerX" id="rlN-WJ-cGU"/>
                         </constraints>
@@ -82,10 +86,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="EPO-nF-vQH">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="FnS-c2-Vkg"/>
-                            <barButtonItem title="Photos" id="UFe-fv-eby"/>
+                            <barButtonItem systemItem="camera" id="FnS-c2-Vkg">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="gDo-EQ-lzQ" id="iVV-f8-blk"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="UFe-fv-eby">
+                                <connections>
+                                    <action selector="photosTapped:" destination="gDo-EQ-lzQ" id="nsk-6t-hT1"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bookImageView" destination="vno-lW-blg" id="QFh-WL-23W"/>
+                        <outlet property="titleTextField" destination="hto-L4-AZs" id="SwO-Ob-0t2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGo-JK-KUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,4 +126,7 @@
             <point key="canvasLocation" x="-812" y="-3"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ME3.jpg" width="604" height="453"/>
+    </resources>
 </document>
